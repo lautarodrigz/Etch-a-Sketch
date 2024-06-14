@@ -26,6 +26,6 @@ body {
     height: calc(100% / 16);
 }
 
-/* .active {
+.active {
     background-color: black;
-} */
+}
