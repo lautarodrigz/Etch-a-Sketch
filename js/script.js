@@ -1,9 +1,23 @@
 const popUpButton = document.createElement("button");
-popUpButton.textContent = "Select the number of squares per side";
+popUpButton.textContent = "16x16";
+popUpButton.classList.add("popupbutton")
 const container = document.querySelector(".container");
 const squaresArray = [];
 let numberOfSquares;
 document.body.insertBefore(popUpButton, container)
+
+for (let i = 0; i < 256; i++) {
+    const square = document.createElement("div");
+    square.className = "square";
+    container.appendChild(square);
+    squaresArray.push(square);
+}
+
+squaresArray.forEach(square => {
+    square.addEventListener("mouseover", () => {
+        square.classList.add("active");
+    });
+});
 
 popUpButton.addEventListener("click", () => {
     do {
@@ -16,6 +30,7 @@ popUpButton.addEventListener("click", () => {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
+    popUpButton.textContent = `${numberOfSquares} x ${numberOfSquares}`;
     for (let i = 0; i < numberOfSquares ** 2; i++) {
         const square = document.createElement("div");
         square.className = "square";
