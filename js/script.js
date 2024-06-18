@@ -12,7 +12,10 @@ popUpButton.addEventListener("click", () => {
             alert("Please pick a number between 2 and 100");
         }
     } while (numberOfSquares > 100 || numberOfSquares <= 1);
-    console.log(numberOfSquares ** 2);
+    // container.innerHTML = "";
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
     for (let i = 0; i < numberOfSquares ** 2; i++) {
         const square = document.createElement("div");
         square.className = "square";
