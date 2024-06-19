@@ -15,7 +15,9 @@ for (let i = 0; i < 256; i++) {
 
 squaresArray.forEach(square => {
     square.addEventListener("mouseover", () => {
-        square.classList.add("active");
+        if (square.style.backgroundColor === "") {
+            square.style.setProperty("background-color", `rgb(${getRandomColor()[0]}, ${getRandomColor()[1]}, ${getRandomColor()[2]})`);
+        }
     });
 });
 
@@ -41,17 +43,18 @@ popUpButton.addEventListener("click", () => {
     }
     squaresArray.forEach(square => {
         square.addEventListener("mouseover", () => {
-            square.classList.add("active");
+            square.style.setProperty("background-color", `rgb(${getRandomColor()[0]}, ${getRandomColor()[1]}, ${getRandomColor()[2]})`);
         });
     });
 });
 
-// function getRandomColor () {
-//     const r = Math.floor(Math.random() * 257);
-//     const g = Math.floor(Math.random() * 257);
-//     const b = Math.floor(Math.random() * 257);
-//     return color;
-// }
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 257);
+    const g = Math.floor(Math.random() * 257);
+    const b = Math.floor(Math.random() * 257);
+    const color = [r, g, b];
+    return color;
+}
 
 
 
