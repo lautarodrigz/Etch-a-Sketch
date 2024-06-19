@@ -1,5 +1,5 @@
 const popUpButton = document.createElement("button");
-popUpButton.textContent = "16x16";
+popUpButton.textContent = "16 x 16";
 popUpButton.classList.add("popupbutton")
 const container = document.querySelector(".container");
 const squaresArray = [];
