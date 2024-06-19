@@ -43,7 +43,9 @@ popUpButton.addEventListener("click", () => {
     }
     squaresArray.forEach(square => {
         square.addEventListener("mouseover", () => {
-            square.style.setProperty("background-color", `rgb(${getRandomColor()[0]}, ${getRandomColor()[1]}, ${getRandomColor()[2]})`);
+            if (square.style.backgroundColor === "") {
+                square.style.setProperty("background-color", `rgb(${getRandomColor()[0]}, ${getRandomColor()[1]}, ${getRandomColor()[2]})`);
+            }    
         });
     });
 });
